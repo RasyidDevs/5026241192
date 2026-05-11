@@ -7,6 +7,11 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\BlogController;
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get('halo', function () {
 	return "<h1>Halo, Selamat datang</h1> di tutorial laravel <i>www.malasngoding.com</i>";
 });
