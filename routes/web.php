@@ -3,19 +3,28 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\LatihanRouting;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\BlogController;
 
-Route::get('/', function () {
-    return view('main');
-});
 Route::get('halo', function () {
-    return "<h1><b>Halo</b>, Selamat datang di tutorial laravel www.malasngoding.com</h1>";
+	return "<h1>Halo, Selamat datang</h1> di tutorial laravel <i>www.malasngoding.com</i>";
 });
 Route::get('blog', function () {
     return view('blog');
 });
-Route::get('pert5', function () {
-    return view('pertemuan5');
-});
+
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+//blog
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
+
+
+
+
 Route::get('dosen', [DosenController::class, 'index']);
 Route::get('biodata', [DosenController::class, 'biodata']);
 
@@ -29,3 +38,6 @@ Route::get('meet5_pertemuan5', [LatihanRouting::class, 'meet5_pertemuan5']);
 Route::get('tugasmeet3_contoh', [LatihanRouting::class, 'tugasmeet3_contoh']);
 Route::get('tugasmeet4_5026241192', [LatihanRouting::class, 'tugasmeet4_5026241192']);
 Route::get('tugasmeet5_tugaslinktree', [LatihanRouting::class, 'tugasmeet5_tugaslinktree']);
+
+Route::get('pegawai', [PegawaiDBController::class, 'index']);
+
