@@ -19,7 +19,6 @@ Route::get('blog', function () {
     return view('blog');
 });
 
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 //blog
@@ -53,6 +52,6 @@ Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 
-Route::get('/template2', function () {
-    return view('template2');
+Route::get('/template', function () {
+    return view('template');
 });
