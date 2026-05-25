@@ -44,5 +44,15 @@ Route::get('tugasmeet3_contoh', [LatihanRouting::class, 'tugasmeet3_contoh']);
 Route::get('tugasmeet4_5026241192', [LatihanRouting::class, 'tugasmeet4_5026241192']);
 Route::get('tugasmeet5_tugaslinktree', [LatihanRouting::class, 'tugasmeet5_tugaslinktree']);
 
-Route::get('pegawai', [PegawaiDBController::class, 'index']);
 
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
+Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
+Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
+Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
+Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+Route::get('/template2', function () {
+    return view('template2');
+});
