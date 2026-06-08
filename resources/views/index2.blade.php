@@ -1,36 +1,35 @@
-@extends('template2')
-@section('title', 'Data Pegawai')
+@extends('template')
+@section('title', 'Data Obat')
 @section('konten')
-    <a href="/pegawai/tambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+    <a href="/obat/tambah" class="btn btn-primary"> + Tambah Obat Baru</a>
     <br />
     <br />
-    <p>Cari Data Pegawai :</p>
-    <form action="/pegawai" method="GET">
-        <input type="text" name="cari" placeholder="Cari Pegawai .." class="form-control">
+    <p>Cari Data Obat :</p>
+    <form action="/obat/cari" method="GET">
+        <input type="text" name="cari" placeholder="Cari Obat .." class="form-control">
         <input type="submit" value="CARI">
     </form>
     <br />
     <table class="table table-striped table-hover ">
         <tr>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Umur</th>
-            <th>Alamat</th>
-            <th>Opsi</th>
+            <th>Kode Obat</th>
+            <th>Merk</th>
+            <th>Stock</th>
+            <th>Tersedia</th>
         </tr>
-        @foreach ($pegawai as $p)
+        @foreach ($obat as $o)
             <tr>
-                <td>{{ $p->pegawai_nama }}</td>
-                <td>{{ $p->pegawai_jabatan }}</td>
-                <td>{{ $p->pegawai_umur }}</td>
-                <td>{{ $p->pegawai_alamat }}</td>
+               <td>{{ $o->kodeobat }}</td>
+                <td>{{ $o->merkobat }}</td>
+                <td>{{ $o->stockobat }}</td>
+                <td>{{ $o->tersedia }}</td>
                 <td>
-                    <a href="/pegawai/edit/{{ $p->pegawai_id }}"class="btn btn-warning">Edit</a>
+                    <a href="/obat/edit/{{ $o->kodeobat }}"class="btn btn-warning">Edit</a>
 
-                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
+                    <a href="/obat/hapus/{{ $o->kodeobat }}" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         @endforeach
     </table>
-    {{ $pegawai->links() }}
+    {{ $obat->links() }}
 @endsection

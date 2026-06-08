@@ -87,7 +87,7 @@ class PegawaiDBController extends Controller
 		->appends($request->all());
 
 		// mengirim data pegawai ke view index
-		return view('index2',["pegawai" => $pegawai]);
+		return view('index',["pegawai" => $pegawai]);
 
 	}
 

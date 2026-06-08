@@ -6,6 +6,7 @@ use App\Http\Controllers\LatihanRouting;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\KeranjangBelanja;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\SiswaController;
 
@@ -71,5 +72,11 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+// D4
+Route::get('/d4', [KeranjangBelanja::class, 'index'])->name('d4.index');
+Route::get('/d4/create', [KeranjangBelanja::class, 'create'])->name('d4.create');
+Route::post('/d4/store', [KeranjangBelanja::class, 'store'])->name('d4.store');
+Route::delete('/d4/{ID}', [KeranjangBelanja::class, 'destroy'])->name('d4.destroy');
 
 
