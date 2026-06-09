@@ -21,7 +21,7 @@
                 <td>{{ $row->KodeBarang }}</td>
                 <td>{{ $row->Jumlah}}</td>
                 <td>{{ formatRibuan($row->Harga) }}</td>
-
+                <td>{{ formatRibuan($row->Harga * $row->Jumlah) }}</td>
                 <td>
                     <a href="{{ route('d4.create', $row->ID) }}" class="btn btn-warning">Beli</a>
                     <form action="{{ route('d4.destroy', $row->ID) }}" method="POST" style="display:inline;">
@@ -36,7 +36,10 @@
     </table>
     @php
         function formatRibuan($angka) {
-            return number_format($angka, 0, ',', '.');
+            if($angka >= 1000){
+                return round($angka / 1000, 1);
+            }
+            return $angka;
         }
     @endphp
 @endsection

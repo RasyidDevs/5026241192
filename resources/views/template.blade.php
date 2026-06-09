@@ -27,7 +27,10 @@
                     <a class="nav-link" href="/obat">Obat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/d4">PR 3</a>
+                    <a class="nav-link" href="/d4">d4 (laki laki)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/e5">e5 (perempuan)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">EAS</a>
