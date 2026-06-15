@@ -10,7 +10,7 @@ use App\Http\Controllers\KeranjangBelanja;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\SiswaController;
-
+use App\Http\Controllers\EasController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -84,3 +84,9 @@ Route::delete('/d4/{ID}', [KeranjangBelanja::class, 'destroy'])->name('d4.destro
 Route::get('/e5', [NilaiKuliahController::class, 'index'])->name('e5.index');
 Route::get('/e5/create', [NilaiKuliahController::class, 'create'])->name('e5.create');
 Route::post('/e5/store', [NilaiKuliahController::class, 'store'])->name('e5.store');
+
+// EAS
+
+Route::get('/eas', [EasController::class, 'index'])->name('eas.index');
+Route::get('/eas/create', [EasController::class, 'create'])->name('eas.create');
+Route::post('/eas/store', [EasController::class, 'store'])->name('eas.store');
